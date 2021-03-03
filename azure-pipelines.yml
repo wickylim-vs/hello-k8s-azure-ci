@@ -18,6 +18,6 @@ steps:
   displayName: 'Deploy to local TKG cluster'
 
 - script: |
-    kubectl --kubeconfig kubeconfig-ali apply -f deployment.yml
+    kubectl --kubeconfig /home/ubuntu/Developer/wicky/azurepipeline/aliconfig/kubeconfig-ali apply -f deployment.yml
   displayName: 'Deploy to Ali ACK'
 
