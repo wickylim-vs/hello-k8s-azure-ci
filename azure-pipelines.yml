@@ -1,0 +1,18 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: VS
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    kubectl config use-context vslab-dev-02-admin@vslab-dev-02
+    kubectl apply -f deployment.yml
+  displayName: 'Deploy to local TKG cluster'
