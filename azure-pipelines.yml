@@ -16,3 +16,8 @@ steps:
     kubectl config use-context vslab-dev-02-admin@vslab-dev-02
     kubectl apply -f deployment.yml
   displayName: 'Deploy to local TKG cluster'
+
+- script: |
+    kubectl --kubeconfig kubeconfig-ali apply -f deployment.yml
+  displayName: 'Deploy to Ali ACK'
+
